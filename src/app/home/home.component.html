@@ -1,0 +1,87 @@
+<!---<h4 *ngIf="auth.isAuthenticated()">
+  You are logged in!
+</h4>----->
+<h4 *ngIf="!auth.isAuthenticated()">
+  You are not logged in! Please <a (click)="auth.login()">Log In</a> to continue.
+</h4>
+<h2 class="title"><i class="fa fa-clock-o" aria-hidden="true"></i> | {{title}}</h2>
+<!---<p>Sensor Data: {{ objectKeys(posts["0"]).length }} records found!</p>----> 
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-firebrick"><i class="ion fa fa-thermometer-full" aria-hidden="true"></i></span>
+            <ul class="info-box-content">
+                <li class="info-box-text">Max Temperature</li>
+                <li class="info-box-number">{{MinAndMax.maxTemperature | number:'1.2-2' }}<small>&#8451;</small></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="ion fa fa-thermometer-empty" aria-hidden="true"></i></span>
+            <ul class="info-box-content">
+                <li class="info-box-text">Min Temperature</li>
+                <li class="info-box-number">{{MinAndMax.minTemperature | number:'1.2-2' }}<small>&#8451;</small></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-firebrick"><i class="ion fa fa-mixcloud" aria-hidden="true"></i></span>
+            <ul class="info-box-content">
+                <li class="info-box-text">Max Humidity</li>
+                <li class="info-box-number">{{MinAndMax.maxHumidity | number:'1.2-2' }}<small>%</small></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="ion fa fa-mixcloud" aria-hidden="true"></i></span>
+            <ul class="info-box-content">
+                <li class="info-box-text">Min Humidity</li>
+                <li class="info-box-number">{{MinAndMax.minHumidity | number:'1.2-2' }}<small>%</small></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">Sensor table</div>
+    <div class="panel-body table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Time</th>
+                    <th>Location</th>
+                    <th>Office</th>
+                    <th>Mac Address</th>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Pressure</th>
+                    <th>Illumination</th>
+                    <th>Loudness</th>
+                    <th>Remark</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let post of posts | paginate: { itemsPerPage:8, currentPage: p }; let i = index">
+                    <td>{{i + 1}}</td><!---- ngIf is not necessary here! ---->
+                    <td>{{ posts[i].read_time | date: 'mediumTime'}}</td>
+                    <td>{{ posts[i].location }}</td>
+                    <td>{{ posts[i].office }}</td>
+                    <td>{{ posts[i].mac }}</td>
+                    <!---<td>{{ post[key]["mac-address"] }}</td>   to avoid a hyphen problem, key notation is used instead! ---->
+                    <td>{{ posts[i].temperature | number:'1.2-2' }} &#8451;</td>
+                    <td>{{ posts[i].humidity | number:'1.2-2' }} %</td>
+                    <td>{{ posts[i].pressure | number:'1.2-2' }} bar</td>
+                    <td>{{ posts[i].lux | number:'1.2-2' }} lux</td>
+                    <td>{{ posts[i].loudness | number:'1.2-2' }} dB</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="panel-footer">
+        <pagination-controls (pageChange) = "p=$event"></pagination-controls>
+    </div>
+</div>

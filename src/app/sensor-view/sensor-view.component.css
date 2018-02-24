@@ -1,0 +1,38 @@
+#pieChart{
+  width: 80vw;
+  height: 80vh;
+}
+.bar {
+  fill: #fd6309
+}
+
+.bar:hover {
+  fill: #0080FF
+}
+/* CSS used here will be applied after bootstrap.css */
+
+.thumbnail {
+	padding:0;
+}
+.arc text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+/***
+SVG Radial progress using d3.js
+A PEN BY Shell Bryson PRO
+***/
+#progress{
+  padding: 20px;
+}
+
+.radial-progress__text {
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}

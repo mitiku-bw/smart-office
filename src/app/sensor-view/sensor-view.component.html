@@ -1,0 +1,125 @@
+<h2><i class="fa fa-microchip" aria-hidden="true"></i> | {{title}}</h2>
+<div *ngIf="posts">
+    <!---<h4>Selected Location: {{selectedLocation.location}}</h4>---->
+    <label>Select Location: </label>
+    <select [(ngModel)]="selectedLocation">
+        <option *ngFor="let sensor of posts" [ngValue]="sensor" name="sensor_location">{{sensor.location}}
+            <!---<span *ngIf="showSad || h.emotion !== 'sad'">
+                <option [ngValue]="h">{{h.name}} ({{h.emotion}})</option>
+            </span>--->
+        </option>
+    </select>
+</div>
+<hr class="">
+<div class="row" *ngIf="selectedLocation">
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-teal"><i class="ion fa fa-thermometer-full" aria-hidden="true"></i></span>
+            <ul class="info-box-content">
+                <li class="info-box-text">Temperature</li>
+                <li class="info-box-number">{{selectedLocation.temperature | number:'1.2-2' }}<small> &#8451;</small></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-teal"><i class="ion fa fa-mixcloud" aria-hidden="true"></i></span>
+            <ul class="info-box-content">
+                <li class="info-box-text">Humidity</li>
+                <li class="info-box-number">{{selectedLocation.humidity | number:'1.2-2' }}<small> %</small></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-teal"><i class="ion fa fa-tachometer" aria-hidden="true"></i></span>
+            <ul class="info-box-content">
+                <li class="info-box-text">Pressure</li>
+                <li class="info-box-number">{{selectedLocation.pressure | number:'1.2-2' }}<small> bar</small></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-teal"><i class="ion fa fa-lightbulb-o" aria-hidden="true"></i></span>
+            <ul class="info-box-content">
+                <li class="info-box-text">Illumination</li>
+                <li class="info-box-number">{{selectedLocation.lux | number:'1.2-2' }}<small> lx</small></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-teal"><i class="ion fa fa-volume-up" aria-hidden="true"></i></span>
+            <ul class="info-box-content">
+                <li class="info-box-text">Loudness</li>
+                <li class="info-box-number">{{selectedLocation.loudness | number:'1.2-2' }}<small> dB</small></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<hr class="">
+<!---
+<div class="row" *ngIf="selectedLocation">
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="info-box text-center" #tempChart
+        data-percentage="99"
+        data-track-width="12" 
+        data-track-colour="D3D3D3" 
+        data-fill-colour="00C0FF" 
+        data-text-colour="00C0FF"
+        data-stroke-colour="D3D3D3" 
+        data-stroke-spacing="0.5">
+            
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="info-box" #humChart>
+            
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="info-box" #pressChart>
+            
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="info-box" #luxChart>
+            
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="info-box" #loudChart>
+            
+        </div>
+    </div>
+</div>
+<div id="progress" 
+    data-percentage="99" 
+    data-track-width="12" 
+    data-track-colour="D3D3D3" 
+    data-fill-colour="00C0FF" 
+    data-text-colour="00C0FF" 
+    data-stroke-colour="D3D3D3" 
+    data-stroke-spacing="0.5"
+    #progress> 
+</div>
+
+<div id="pieChart" #pieChart>
+    <svg></svg>
+</div>
+
+<div class="col-sm-6 col-xs-12">
+    <app-barchart *ngIf="tempratureData" [data]="tempratureData" [chartTitle]="chartTitleTem"></app-barchart>
+</div>
+<div class="col-sm-6 col-xs-12">
+    <app-barchart *ngIf="tempratureData" [data]="tempratureData" [chartTitle]="chartTitleTem"></app-barchart>
+</div>
+<div>
+    <pre class="row">{{ tempratureData | json }}</pre>
+</div>
+<div>
+    <pre class="row">{{ posts | json }}</pre>
+</div>
+
+---->

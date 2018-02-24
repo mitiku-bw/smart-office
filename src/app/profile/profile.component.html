@@ -1,0 +1,29 @@
+<div class="panel panel-default profile-area">
+  <div class="panel-heading">
+    <h2><i class="fa fa-user-o" aria-hidden="true"></i> | {{title}}</h2>
+  </div>
+  <div class="panel-body card">
+    <div class="col-sm-4">
+      <img src="{{profile?.picture}}" class="avatar img-rounded" alt="avatar">
+    </div>
+    <div class="col-sm-8">
+      <h1>{{ profile?.name }}</h1>
+      <h5><span class="label label-default">Nick name :</span> {{ profile?.nickname }}</h5>
+      <h5><span class="label label-default">Gender :</span> {{ profile?.gender }}</h5>
+      <h5><span class="label label-default">Updated :</span> {{ profile?.updated_at | date: 'medium' }}</h5>
+      <a href="#"><i class="fa fa-dribbble"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a> 
+      <a href="#"><i class="fa fa-linkedin"></i></a> 
+      <a href="#"><i class="fa fa-facebook"></i></a> 
+      <p><button>Contact</button></p>
+    </div>
+    <!---
+    <img src="{{profile?.picture}}" class="avatar" alt="avatar">
+    <div>
+      <label><i class="glyphicon glyphicon-user"></i> Nickname</label>
+      <h3 class="nickname">{{ profile?.nickname }}</h3>
+    </div>
+    <pre class="full-profile">{{ profile | json }}</pre>
+    --->
+  </div>
+</div>

@@ -1,0 +1,16 @@
+#barChart{
+  width: 80vw;
+  height: 80vh;
+}
+.bar {
+  fill: #fd6309
+}
+
+.bar:hover {
+  fill: #0080FF
+}
+/* CSS used here will be applied after bootstrap.css */
+
+.thumbnail {
+	padding:0;
+}

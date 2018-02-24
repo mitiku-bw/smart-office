@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="501.391 292.619 144.25 143.543">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-5 {
+        fill: none;
+      }
+
+      .cls-1, .cls-3 {
+        stroke: #1dc;
+      }
+
+      .cls-1 {
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        stroke: #0b75f0;
+        stroke-width: 2px;
+        font-size: 65px;
+        font-family: Phosphate-Inline, Phosphate;
+        letter-spacing: 0.01em;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Ellipse_1" data-name="Ellipse 1" class="cls-1" transform="translate(501.391 353.43) rotate(-45)">
+    <ellipse class="cls-4" cx="43" cy="54" rx="43" ry="54"/>
+    <ellipse class="cls-5" cx="43" cy="54" rx="41" ry="52"/>
+  </g>
+  <text id="S" class="cls-2" transform="translate(589.072 379.593) rotate(-45)"><tspan x="-14.625" y="0">S</tspan></text>
+  <g id="Rectangle_4" data-name="Rectangle 4" class="cls-3" transform="translate(591.193 416.363) rotate(-45)">
+    <rect class="cls-4" width="49" height="8" rx="4"/>
+    <rect class="cls-5" x="0.5" y="0.5" width="48" height="7" rx="3.5"/>
+  </g>
+  <g id="Rectangle_5" data-name="Rectangle 5" class="cls-3" transform="translate(598.265 423.434) rotate(-45)">
+    <rect class="cls-4" width="49" height="8" rx="4"/>
+    <rect class="cls-5" x="0.5" y="0.5" width="48" height="7" rx="3.5"/>
+  </g>
+  <g id="Rectangle_6" data-name="Rectangle 6" class="cls-3" transform="translate(605.336 430.505) rotate(-45)">
+    <rect class="cls-4" width="49" height="8" rx="4"/>
+    <rect class="cls-5" x="0.5" y="0.5" width="48" height="7" rx="3.5"/>
+  </g>
+</svg>

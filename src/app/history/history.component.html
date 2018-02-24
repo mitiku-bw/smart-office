@@ -1,0 +1,69 @@
+<h2 class="title"><i class="fa fa-history" aria-hidden="true"></i> | {{title}}</h2>
+
+<!---<p>Sensor Data: {{ objectKeys(posts["0"]).length }} records found!</p>----> 
+<div class="panel panel-primary">
+    <div class="panel-heading">Sensor archive</div>
+    <div class="panel-body table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Location</th>
+                    <th>Office</th>
+                    <th>Mac Address</th>
+                    <th>Time</th>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Pressure</th>
+                    <th>Illumination</th>
+                    <th>Loudness</th>
+                    <th>Remark</th>
+                </tr>
+            </thead>
+            <tbody *ngFor = "let post of posts">
+                <tr *ngFor = "let key of objectKeys(post) | paginate: { itemsPerPage:8, currentPage: p }; let i = index">
+                    <td *ngIf='(key != "_id")'>{{ i + 1 }}</td><!---- ngIf is not necessary here! ---->
+                    <td>{{ post[key].location }}</td>
+                    <td>{{ post[key].office }}</td>
+                    <td>{{ post[key].mac }}</td>
+                    <td>
+                        <tr *ngFor = "let readings of post[key].readings;">{{readings.read_time | date: 'medium'}}</tr>
+                    </td>
+                    <td>
+                        <tr *ngFor = "let readings of post[key].readings;">{{readings.ambientTemperature}} &#8451;</tr>
+                    </td>
+                    <td>
+                        <tr *ngFor = "let readings of post[key].readings;">{{readings.humidity}} %</tr>
+                    </td>
+                    <td>
+                        <tr *ngFor = "let readings of post[key].readings;">{{readings.pressure}} bar</tr>
+                    </td>
+                    <td>
+                        <tr *ngFor = "let readings of post[key].readings;">{{readings.lux}} lux</tr>
+                    </td>
+                    <td>
+                        <tr *ngFor = "let readings of post[key].readings;">{{readings.loudness}} dB</tr>
+                    </td>
+                    <td>
+                        <tr *ngFor = "let readings of post[key].readings;"></tr>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="panel-footer">
+        <pagination-controls (pageChange) = "p=$event"></pagination-controls>
+    </div>
+</div>
+<!---
+<div>
+    <pre class="row">{{ tempratureData | json }}</pre>
+</div>
+<div class="col-sm-6 col-xs-12">
+    <app-barchart *ngIf="tempratureData" [data]="tempratureData" [chartTitle]="chartTitleTem"></app-barchart>
+</div>
+<div class="col-sm-6 col-xs-12">
+    <app-barchart *ngIf="humidityData" [data]="humidityData" [chartTitle]="chartTitleHum"></app-barchart>
+</div>
+
+--->

@@ -1,0 +1,23 @@
+<h2 class="title"><i class="fa fa-bar-chart" aria-hidden="true"></i> | {{title}}</h2>
+
+<!---
+<div id="barChart" #barChart>
+    <svg></svg>
+</div>
+--->
+<div class="col-sm-6 col-xs-12">
+    <app-barchart *ngIf="tempratureData" [data]="tempratureData" [chartTitle]="chartTitleTem"></app-barchart>
+</div>
+<div class="col-sm-6 col-xs-12">
+    <app-barchart *ngIf="humidityData" [data]="humidityData" [chartTitle]="chartTitleHum"></app-barchart>
+</div>
+<div class="col-sm-6 col-xs-12">
+    <app-barchart *ngIf="pressureData" [data]="pressureData" [chartTitle]="chartTitlePre"></app-barchart>
+</div>
+<div class="col-sm-6 col-xs-12">
+    <app-barchart *ngIf="illuminationData" [data]="illuminationData" [chartTitle]="chartTitleIll"></app-barchart>
+</div>
+<div class="col-sm-6 col-xs-12">
+    <app-barchart *ngIf="loudnessData" [data]="loudnessData" [chartTitle]="chartTitleLou"></app-barchart>
+</div>
+

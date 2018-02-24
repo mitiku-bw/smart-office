@@ -1,0 +1,12 @@
+<nav>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <span id="menuicon">&#9776;</span>
+            <a class="navbar-brand" routerLink="/"  routerLinkActive="active">Smart<span class="lite">OFFICE</span></a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li routerLinkActive="active"><a routerLink="/profile"><img src="{{profile?.picture}}" class="welcome img-circle" alt="avatar"> {{ profile?.name }}</a></li>
+            <li><a routerLinkActive="active" (click)="auth.logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+    </div>
+</nav>

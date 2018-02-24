@@ -1,0 +1,120 @@
+<!---
+<div *ngIf="isValid;then content"></div>
+
+<ng-template #content>content here...</ng-template>
+--->
+<div  *ngIf="auth.isAuthenticated();else landingPage">
+    <div id="mySidenav" class="sidenav">
+        <!---<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>--->
+        <ul>
+            <li routerLinkActive="active">
+                <a routerLink="/sensor-view"><i class="fa fa-microchip fa-lg"></i>Sensor view</a>
+            </li>
+            <li routerLinkActive="active">
+                <a routerLink="/history"><i class="fa fa-history fa-lg"></i>History</a>
+            </li>
+            <li routerLinkActive="active">
+                <a routerLink="/charts"><i class="fa fa-bar-chart fa-lg"></i>Charts</a>
+            </li>
+            <li routerLinkActive="active">
+                <a routerLink="/profile"><i class="fa fa-user fa-lg"></i> Profile</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div id="main">
+        <app-navigation></app-navigation>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<ng-template #landingPage>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mobileBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                </button>
+                <a class="navbar-brand" routerLink="/"  routerLinkActive="active">Smart<span class="lite">OFFICE</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="mobileBar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a routerLinkActive="active" (click)="auth.login()"><i class="fa fa-user-plus" aria-hidden="true"></i><span> Sign Up</span></a></li>
+                    <li><a routerLinkActive="active" (click)="auth.login()"><i class="fa fa-sign-in" aria-hidden="true"></i><span> Login</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header -->
+    <header class="intro-header">
+        <div class="container">
+            <div class="intro-message">
+                <h1 class="orangish">SMART<span class="lite">OFFICE</span></h1>
+                <h3>Sensor Data Visualization</h3>
+                <hr class="intro-divider">
+                <ul class="list-inline intro-social-buttons">
+                    <li class="list-inline-item">
+                        <a href="#" class="btn btn-secondary btn-lg">
+                            <i class="fa fa-twitter fa-fw"></i>
+                            <span class="network-name .hidden-xs">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="btn btn-secondary btn-lg">
+                            <i class="fa fa-github fa-fw"></i>
+                            <span class="network-name .hidden-xs">Github</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="btn btn-secondary btn-lg">
+                            <i class="fa fa-linkedin fa-fw"></i>
+                            <span class="network-name .hidden-xs">Linkedin</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- Container (About Section) -->
+    <div class="container">
+        <div class="row section">
+            <div class="col-sm-6">
+                <h2 class="lite">Realtime Page</h2><br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="card col-sm-6">
+                <img class="img-responsive" src="../assets/images/realtime-screenshot.png" alt="Realtime page">
+            </div>
+        </div>
+        <div class="row section">
+            <div class="col-sm-6 col-sm-push-6">
+                <h2 class="lite">Sensor View</h2><br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="card col-sm-6 col-sm-pull-6">
+                <img class="img-responsive" src="../assets/images/sensor-view.gif" alt="Realtime page">
+            </div>
+        </div>
+        <div class="row section">
+            <div class="col-sm-6">
+                <h2 class="lite">Realtime Page</h2><br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="card col-sm-6">
+                <img class="img-responsive" src="../assets/images/realtime-screenshot.png" alt="Realtime page">
+            </div>
+        </div>
+        <div class="row section">
+            <div class="col-sm-6 col-sm-push-6">
+                <h2 class="lite">Sensor View</h2><br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="card col-sm-6 col-sm-pull-6">
+                <img class="img-responsive" src="../assets/images/sensor-view.gif" alt="Realtime page">
+            </div>
+        </div>
+    </div>
+</ng-template>
+
